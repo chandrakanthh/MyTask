@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="countryDataReposItem"
+            type="com.example.mytask.data.models.RestCountriesModel" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:cardElevation="@dimen/dimens_7"
+        app:cardBackgroundColor="@color/white"
+        android:id="@+id/rest_country_item_cv"
+        app:cardCornerRadius="@dimen/dimens_10"
+        android:layout_marginHorizontal="@dimen/dimens_10"
+        android:layout_marginTop="@dimen/dimens_5">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimens_5">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:elevation="@dimen/dimens_5"
+                android:id="@+id/country_flag_avatar_iv"
+                android:layout_width="@dimen/dimens_50"
+                android:layout_height="@dimen/dimens_50"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/country_name_tv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/guideline"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/country_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{countryDataReposItem.name.common}"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/country_flag_avatar_iv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/country_population_header_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimens_5"
+                android:gravity="center"
+                android:text="@string/population_str"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintStart_toEndOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/country_population_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimens_5"
+                android:gravity="center|start"
+                android:text="@{countryDataReposItem.population.toString()}"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/country_population_header_tv"
+                app:layout_constraintStart_toEndOf="@+id/country_population_header_tv"
+                app:layout_constraintTop_toTopOf="@+id/country_population_header_tv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/country_area_header_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="text|number"
+                android:text="@string/area_str"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintStart_toEndOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/country_population_header_tv" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/country_area_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:inputType="text|number"
+                android:text="@{countryDataReposItem.area.toString()}"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/country_area_header_tv"
+                app:layout_constraintStart_toEndOf="@+id/country_area_header_tv"
+                app:layout_constraintTop_toTopOf="@+id/country_area_header_tv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/country_subregion_header_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="text|number"
+                android:text="@string/sub_region_str"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintStart_toEndOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/country_area_tv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/country_subregion_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:inputType="text|number"
+                android:text="@{countryDataReposItem.subregion}"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/country_subregion_header_tv"
+                app:layout_constraintTop_toTopOf="@+id/country_subregion_header_tv"
+                app:layout_constraintBottom_toBottomOf="@+id/country_subregion_header_tv"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/country_region_header_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="text|number"
+                android:text="@string/region_str"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintStart_toEndOf="@+id/guideline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/country_subregion_header_tv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/country_region_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:inputType="text|number"
+                android:text="@{countryDataReposItem.region}"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/country_region_header_tv"
+                app:layout_constraintTop_toTopOf="@+id/country_region_header_tv"
+                app:layout_constraintBottom_toBottomOf="@+id/country_region_header_tv"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.3" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

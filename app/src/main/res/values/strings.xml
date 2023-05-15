@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MyTask</string>
+    <string name="title">title</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="region_str">Region:</string>
+    <string name="sub_region_str">Sub-Region:</string>
+    <string name="area_str">Area:</string>
+    <string name="population_str">Population:</string>
+</resources>
